@@ -27,7 +27,9 @@ contract Factory {
 
     // Self as temp init impl OZ
     function createTempOZ(address impl) external {
-        Factory proxy = Factory(address(new TempOzProxy(address(this))));
+        Factory proxy = Factory(
+            address(new TempOzProxy{salt: SALT}(address(this)))
+        );
         proxy.updateTemp(impl);
     }
 
