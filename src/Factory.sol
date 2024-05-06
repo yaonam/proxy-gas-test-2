@@ -8,6 +8,10 @@ import {LibClone} from "solady/utils/LibClone.sol";
 contract Factory {
     bytes32 constant SALT = keccak256(abi.encode("hello"));
 
+    function createV3(address impl) external {
+        new V3Proxy{salt: SALT}().initialize(impl);
+    }
+
     function getTstoreImpl() external view returns (address impl) {
         assembly {
             impl := tload(0)
@@ -40,6 +44,23 @@ contract Factory {
             SALT
         );
         Factory(proxy).updateTemp(impl);
+    }
+}
+
+contract V3Proxy is Proxy {
+    function initialize(address implementation) external {
+        require(_implementation() == address(0), "Already initialized");
+        ERC1967Utils.upgradeToAndCall(implementation, "");
+    }
+
+    function _implementation()
+        internal
+        view
+        virtual
+        override
+        returns (address)
+    {
+        return ERC1967Utils.getImplementation();
     }
 }
 

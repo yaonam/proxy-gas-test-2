@@ -12,6 +12,10 @@ contract FactoryTest is Test {
         factory = new Factory();
     }
 
+    function test_V3() public {
+        factory.createV3(impl);
+    }
+
     function test_Tstore() public {
         factory.createTstore(impl);
     }
