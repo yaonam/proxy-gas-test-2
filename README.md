@@ -3,11 +3,12 @@
 | src/Factory.sol:Factory contract |                 |        |        |        |         |
 | -------------------------------- | --------------- | ------ | ------ | ------ | ------- |
 | Deployment Cost                  | Deployment Size |        |        |        |         |
-| 994373                           | 4383            |        |        |        |         |
+| 1008202                          | 4447            |        |        |        |         |
 | Function Name                    | min             | avg    | median | max    | # calls |
-| createTempOZ                     | 113795          | 113795 | 113795 | 113795 | 1       |
-| createTempSol                    | 93954           | 93954  | 93954  | 93954  | 1       |
-| createTstore                     | 111571          | 111571 | 111571 | 111571 | 1       |
-| createV3                         | 258603          | 258603 | 258603 | 258603 | 1       |
-| getTstoreImpl                    | 265             | 265    | 265    | 265    | 1       |
-| updateTemp                       | 2006            | 2006   | 2006   | 2006   | 2       |
+| createDirect                     | 91329           | 91329  | 91329  | 91329  | 1       |
+| createTempOZ                     | 113774          | 113774 | 113774 | 113774 | 1       |
+| createTempSol                    | 94000           | 94000  | 94000  | 94000  | 1       |
+| createTstore                     | 111550          | 111550 | 111550 | 111550 | 1       |
+| createV3                         | 258581          | 258581 | 258581 | 258581 | 1       |
+| getTstoreImpl                    | 288             | 288    | 288    | 288    | 1       |
+| updateTemp                       | 2029            | 2029   | 2029   | 2029   | 2       |

@@ -45,6 +45,10 @@ contract Factory {
         );
         Factory(proxy).updateTemp(impl);
     }
+
+    function createDirect(address impl) external {
+        LibClone.createDeterministicERC1967(impl, SALT);
+    }
 }
 
 contract V3Proxy is Proxy {

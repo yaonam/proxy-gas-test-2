@@ -27,4 +27,8 @@ contract FactoryTest is Test {
     function test_TempSol() public {
         factory.createTempSol(impl);
     }
+
+    function test_Direct() public {
+        factory.createDirect(impl);
+    }
 }
